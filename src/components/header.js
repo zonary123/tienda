@@ -11,15 +11,16 @@ function Header () {
     const html = document.querySelector('html')
     html.classList.toggle('dark')
   }
+
   return (
-    <div className='Header font-bold bg-gray-200 dark:bg-[#22252c] dark:text-white mb-4'>
+    <div className='Header font-bold bg-gray-200 dark:bg-[#22252c] dark:text-white mb-4 flex justify-center items-center'>
       <div>
         <img src='./logo.svg' alt='' className='logo' />
       </div>
       <div className='Search'>
         <input
           type='search'
-          className=' rounded-lg bg-gray-100 border-gray-400 border-y-2 border-x-2 dark:bg-white'
+          className='rounded-lg bg-gray-100 border-gray-400 border-y-2 border-x-2 dark:bg-white'
         />
       </div>
       <div>
