@@ -7,21 +7,24 @@ function Header () {
   const [darkMode, setDarkMode] = useState(false)
 
   useEffect(() => {
+    const storedTheme = localStorage.getItem('theme')
     const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
       .matches
-    setDarkMode(prefersDarkMode)
-    const html = document.querySelector('html')
-    if (prefersDarkMode) {
-      html.classList.add('dark')
+
+    if (storedTheme === 'dark' || (!storedTheme && prefersDarkMode)) {
+      setDarkMode(true)
+      document.documentElement.classList.add('dark')
     } else {
-      html.classList.remove('dark')
+      setDarkMode(false)
+      document.documentElement.classList.remove('dark')
     }
   }, [])
 
   const changeTheme = () => {
-    setDarkMode(!darkMode)
-    const html = document.querySelector('html')
-    html.classList.toggle('dark')
+    const newDarkMode = !darkMode
+    setDarkMode(newDarkMode)
+    document.documentElement.classList.toggle('dark')
+    localStorage.setItem('theme', newDarkMode ? 'dark' : 'light')
   }
 
   return (
