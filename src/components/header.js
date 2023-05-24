@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import './header.css'
+import './css/header.css'
 import { Link } from 'react-router-dom'
 import { FaMoon, FaSun } from 'react-icons/fa'
 
@@ -15,7 +15,7 @@ function Header () {
   return (
     <div className='Header font-bold bg-gray-200 dark:bg-[#22252c] dark:text-white mb-4 flex justify-center items-center'>
       <div>
-        <img src='./logo.svg' alt='' className='logo' />
+        <img src='./logo.png' alt='' className='logo rounded-full p-2' />
       </div>
       <div className='Search'>
         <input
@@ -25,13 +25,13 @@ function Header () {
       </div>
       <div>
         <span>
-          <Link to='/SignUp'>SignUp</Link>
+          <Link to='/SignUp' className=''>SignUp</Link>
         </span>
         <button
           onClick={ChangeTheme}
-          className='Theme dark:bg-white dark:text-black m-2 p-2 rounded-lg border-slate-400 border-y-2 border-x-2'
+          className='Theme dark:bg-white dark:text-black m-2 p-2 rounded-lg border-slate-400 border-y-2 border-x-2 bg-white'
         >
-          {darkMode ? <FaMoon size={20} /> : <FaSun size={20} />}
+          {darkMode ? <FaMoon size={20} className='' /> : <FaSun size={20} />}
         </button>
       </div>
     </div>

@@ -6,10 +6,9 @@ function Home () {
   return (
     <>
       <Header />
-      <h1>Home</h1>
-      <Routes>
-        
-      </Routes>
+      <main>
+        <h1>Tienda Online</h1>
+      </main>
       <Footer />
     </>
   )
