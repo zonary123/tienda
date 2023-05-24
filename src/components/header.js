@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import './header.css'
+import SignUp from './SignUp'
+import Home from './Home'
+import { Link } from 'react-router-dom'
 
 function Header () {
   const [darkMode, setDarkMode] = useState(false)
@@ -21,7 +24,9 @@ function Header () {
         />
       </div>
       <div>
-        <span>sign up</span>
+        <span>
+          <Link to='/SignUp'>SignUp</Link>
+        </span>
         <button
           onClick={ChangeTheme}
           className='Theme dark:bg-white dark:text-black m-2 p-2 rounded-lg border-slate-400 border-y-2 border-x-2'
