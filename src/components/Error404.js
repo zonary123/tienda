@@ -9,20 +9,20 @@ const Error404 = () => {
   }
 
   return (
-    <div
-      style={styles.container}
-      className='w-full bg-white dark:bg-[#22252c] text-black dark:text-white'
-    >
+    <div className='flex flex-col items-center justify-center h-screen bg-white dark:bg-[#22252c] text-black dark:text-white'>
       <img
         src='https://cdn.pixabay.com/photo/2021/07/21/12/49/error-6482984_960_720.png'
         alt=''
-        className='w-72 h-72'
+        className='w-64 h-64'
       />
-      <h1 style={styles.heading}>Página no encontrada</h1>
-      <p style={styles.text}>
+      <h1 className='text-3xl md:text-5xl mb-6'>Página no encontrada</h1>
+      <p className='text-lg md:text-xl mb-6'>
         Lo sentimos, la página que estás buscando no existe.
       </p>
-      <button style={styles.button} onClick={goBack}>
+      <button
+        className='px-4 py-2 text-base md:text-lg bg-red-500 text-white rounded-md'
+        onClick={goBack}
+      >
         Volver
       </button>
     </div>
@@ -30,32 +30,3 @@ const Error404 = () => {
 }
 
 export default Error404
-
-const styles = {
-  container: {
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: '100vh',
-    fontFamily: 'Arial, sans-serif',
-    textAlign: 'center'
-  },
-  heading: {
-    fontSize: '36px',
-    marginBottom: '20px'
-  },
-  text: {
-    fontSize: '18px',
-    marginBottom: '20px'
-  },
-  button: {
-    padding: '10px 20px',
-    fontSize: '16px',
-    backgroundColor: '#3498db',
-    color: '#fff',
-    border: 'none',
-    borderRadius: '4px',
-    cursor: 'pointer'
-  }
-}

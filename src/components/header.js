@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import './css/header.css'
 import { Link } from 'react-router-dom'
 import { FaMoon, FaSun } from 'react-icons/fa'
@@ -6,7 +6,19 @@ import { FaMoon, FaSun } from 'react-icons/fa'
 function Header () {
   const [darkMode, setDarkMode] = useState(false)
 
-  const ChangeTheme = () => {
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+      .matches
+    setDarkMode(prefersDarkMode)
+    const html = document.querySelector('html')
+    if (prefersDarkMode) {
+      html.classList.add('dark')
+    } else {
+      html.classList.remove('dark')
+    }
+  }, [])
+
+  const changeTheme = () => {
     setDarkMode(!darkMode)
     const html = document.querySelector('html')
     html.classList.toggle('dark')
@@ -25,10 +37,12 @@ function Header () {
       </div>
       <div>
         <span>
-          <Link to='/SignUp' className=''>SignUp</Link>
+          <Link to='/SignUp' className=''>
+            SignUp
+          </Link>
         </span>
         <button
-          onClick={ChangeTheme}
+          onClick={changeTheme}
           className='Theme dark:bg-white dark:text-black m-2 p-2 rounded-lg border-slate-400 border-y-2 border-x-2 bg-white'
         >
           {darkMode ? <FaMoon size={20} className='' /> : <FaSun size={20} />}
