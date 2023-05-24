@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import './header.css'
-import SignUp from './SignUp'
-import Home from './Home'
 import { Link } from 'react-router-dom'
 
 function Header () {
