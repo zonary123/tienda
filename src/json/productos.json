@@ -1,0 +1,88 @@
+{
+  "store": "Tech Store",
+  "categories": [
+    {
+      "category": "Computadoras",
+      "products": [
+        {
+          "name": "Laptop HP 15",
+          "brand": "HP",
+          "price": 700,
+          "stock": 10,
+          "rating": 5
+        },
+        {
+          "name": "iMac 27 pulgadas",
+          "brand": "Apple",
+          "price": 2000,
+          "stock": 5,
+          "rating": 4.8
+        },
+        {
+          "name": "Chromebook Lenovo",
+          "brand": "Lenovo",
+          "price": 400,
+          "stock": 15,
+          "rating": 1.5
+        }
+      ]
+    },
+    {
+      "category": "Impresoras",
+      "products": [
+        {
+          "name": "Impresora Canon Pixma",
+          "brand": "Canon",
+          "price": 100,
+          "stock": 20,
+          "rating": 4.2
+        },
+        {
+          "name": "Impresora HP Deskjet",
+          "brand": "HP",
+          "price": 80,
+          "stock": 25,
+          "rating": 4.5
+        }
+      ]
+    },
+    {
+      "category": "Accesorios de Computadora",
+      "products": [
+        {
+          "name": "Teclado y ratón inalámbrico",
+          "brand": "Logitech",
+          "price": 50,
+          "stock": 30,
+          "rating": 4.6
+        },
+        {
+          "name": "Monitor Samsung 24 pulgadas",
+          "brand": "Samsung",
+          "price": 150,
+          "stock": 10,
+          "rating": 4.4
+        }
+      ]
+    },
+    {
+      "category": "Teléfonos Móviles",
+      "products": [
+        {
+          "name": "iPhone 12",
+          "brand": "Apple",
+          "price": 1000,
+          "stock": 8,
+          "rating": 4.9
+        },
+        {
+          "name": "Samsung Galaxy S21",
+          "brand": "Samsung",
+          "price": 900,
+          "stock": 10,
+          "rating": 4.7
+        }
+      ]
+    }
+  ]
+}

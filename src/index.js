@@ -1,13 +1,19 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import ReactDOM from 'react-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './index.css'
 import App from './App'
 import Header from './components/header'
+import Filter from './components/Filter'
+import Productos from './components/Productos/productos'
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(
-  <React.StrictMode>
+ReactDOM.render(
+  <Router>
     <Header />
-    <App />
-  </React.StrictMode>
+    <Switch>
+      <Route exact path='/' component={App} />
+      <Route exact path='/productos' component={Productos} />
+    </Switch>
+  </Router>,
+  document.getElementById('root')
 )

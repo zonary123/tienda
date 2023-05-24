@@ -10,7 +10,7 @@ function Header () {
     html.classList.toggle('dark')
   }
   return (
-    <div className='Header font-bold bg-white dark:bg-[#22252c] dark:text-white '>
+    <div className='Header font-bold bg-white dark:bg-[#22252c] dark:text-white mb-4'>
       <div>
         <img src='./logo.svg' alt='' className='logo' />
       </div>
