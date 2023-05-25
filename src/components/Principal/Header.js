@@ -4,34 +4,40 @@ import { Link } from 'react-router-dom'
 import { FaMoon, FaSun, FaSearch } from 'react-icons/fa'
 import productos from '../../json/productos.json'
 
-function Header() {
+function Header () {
   const [darkMode, setDarkMode] = useState(false)
   const [searchTerm, setSearchTerm] = useState('')
   const [searchResults, setSearchResults] = useState([])
   const [isSearchFocused, setSearchFocused] = useState(false)
 
-  useEffect(() => {
-    const storedTheme = localStorage.getItem('theme')
-    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  useEffect(
+    () => {
+      const storedTheme = localStorage.getItem('theme')
+      const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)')
+        .matches
 
-    if (storedTheme === 'dark' || (!storedTheme && prefersDarkMode)) {
-      setDarkMode(true)
-      document.documentElement.classList.add('dark')
-    } else {
-      setDarkMode(false)
-      document.documentElement.classList.remove('dark')
-    }
+      if (storedTheme === 'dark' || (!storedTheme && prefersDarkMode)) {
+        setDarkMode(true)
+        document.documentElement.classList.add('dark')
+      } else {
+        setDarkMode(false)
+        document.documentElement.classList.remove('dark')
+      }
 
-    const filteredProducts = productos.filter(
-      (product) =>
-        (product.nombre &&
-          product.nombre.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (product.descripcion &&
-          product.descripcion.toLowerCase().includes(searchTerm.toLowerCase()))
-    )
+      const filteredProducts = productos.filter(
+        product =>
+          (product.nombre &&
+            product.nombre.toLowerCase().includes(searchTerm.toLowerCase())) ||
+          (product.descripcion &&
+            product.descripcion
+              .toLowerCase()
+              .includes(searchTerm.toLowerCase()))
+      )
 
-    setSearchResults(filteredProducts)
-  }, [searchTerm])
+      setSearchResults(filteredProducts)
+    },
+    [searchTerm]
+  )
 
   const changeTheme = () => {
     const newDarkMode = !darkMode
@@ -40,8 +46,9 @@ function Header() {
     localStorage.setItem('theme', newDarkMode ? 'dark' : 'light')
   }
 
-  const handleSearchChange = (event) => {
+  const handleSearchChange = event => {
     setSearchTerm(event.target.value)
+    setSearchFocused(true)
   }
 
   return (
@@ -52,9 +59,9 @@ function Header() {
       <div className='Search relative'>
         <input
           type='search'
-          className={`rounded-lg text-black dark:text-black bg-gray-100 border-gray-400 border-y-2 border-x-2 dark:bg-white pl-8 pr-2 ${
-            isSearchFocused ? 'search-focused' : ''
-          }`}
+          className={`rounded-lg text-black dark:text-black bg-gray-100 border-gray-400 border-y-2 border-x-2 dark:bg-white pl-8 pr-2 ${isSearchFocused
+            ? 'search-focused'
+            : ''}`}
           value={searchTerm}
           onChange={handleSearchChange}
           onFocus={() => setSearchFocused(true)}
@@ -65,25 +72,28 @@ function Header() {
           size={20}
           className='absolute top-1/2 left-2 transform -translate-y-1/2 text-gray-400 dark:text-gray-500'
         />
-        {isSearchFocused && searchResults.length > 0 && (
+        {isSearchFocused &&
+          searchResults.length > 0 &&
           <ul className='absolute top-full left-0 right-0 rounded-lg bg-white dark:bg-gray-900 shadow-md z-10'>
-            {searchResults.map((product) => (
+            {searchResults.map(product =>
               <li key={product.id} className='p-2 border-b'>
                 <Link
-                  to={`/Producto/${product.id}`} // Corregido: Utilizar "/Producto/:id" en lugar de "/product/:id"
+                  to={`/Producto/${product.id}`}
                   className='text-gray-800 dark:text-gray-200 hover:text-orange-500 dark:hover:text-cyan-300 flex items-center'
-                  onClick={() => setSearchTerm('')}
+                  onClick={() => setSearchFocused(false)}
                 >
-                  <img src={product.imagen} alt={product.nombre} className='mr-2 w-6 h-6' />
+                  <img src={product.imagen} alt='' className='mr-2 w-6 h-6' />
                   {product.nombre}
                 </Link>
               </li>
-            ))}
-          </ul>
-        )}
+            )}
+          </ul>}
       </div>
       <div>
-        <Link to='/SignUp' className='text-white bg-blue-500 px-4 py-2 rounded-lg mr-2'>
+        <Link
+          to='/SignUp'
+          className='text-white bg-blue-500 px-4 py-2 rounded-lg mr-2'
+        >
           SignUp
         </Link>
 

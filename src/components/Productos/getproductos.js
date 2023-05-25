@@ -30,30 +30,44 @@ export default function GetProductos () {
           >
             <div className='Producto_imagen h-64 flex justify-center items-center mx-auto rounded-lg overflow-hidden'>
               <img
-                src={producto.imagen}
+                src={
+                  producto.imagen === null
+                    ? './img/no-encontrado.png'
+                    : producto.imagen
+                }
                 alt={producto.nombre}
                 className='object-cover object-center h-[250px] w-[288px]'
               />
             </div>
-            <p className='text-gray-800 dark:text-gray-200 font-bold text-lg my-2'>
-              {producto.nombre}
-            </p>
-            <h1 className='text-center text-gray-600 dark:text-gray-300 text-sm my-2'>
+            <h1 className='text-center text-gray-600 dark:text-gray-300 text-sm my-2 bg-white dark:bg-gray-600 rounded-lg py-4 font-bold '>
               {producto.marca}
             </h1>
-            <p className='text-gray-600 dark:text-gray-400 my-2'>
-              Precio: {producto.precio}
+            <p className='text-gray-800 dark:text-gray-200 font-bold text-lg my-1'>
+              {producto.nombre}
             </p>
-            <p className='text-gray-600 dark:text-gray-400 my-2'>
+
+            <p className='text-gray-700 dark:text-gray-400 my-1'>
+              Precio: {producto.precio}€
+            </p>
+            <p className='text-gray-600 dark:text-gray-400 my-1'>
               Stock: {producto.stock}
             </p>
-            <p className='text-gray-600 dark:text-gray-400 my-2'>
+            <p className='text-gray-600 dark:text-gray-400 mb-3'>
               Puntuación: {renderStars(producto.valoracion)}
             </p>
-            <div className='producto_botones flex justify-between'>
+
+            <div className='producto_botones flex justify-around '>
               <Link to={`/Producto/${producto.id}`}>
                 <button
-                  className='bg-blue-500 text-white font-bold py-2 px-3 rounded-lg'
+                  className='bg-blue-500 text-white font-bold py-2 px-3 rounded-lg shadow-lg dark:shadow-blue-500/50 shadow-blue-400'
+                  onClick={() => handleVerMas(producto)}
+                >
+                  Añadir
+                </button>
+              </Link>
+              <Link to={`/Producto/${producto.id}`}>
+                <button
+                  className='bg-blue-500 text-white font-bold py-2 px-3 rounded-lg shadow-lg dark:shadow-blue-500/50 shadow-blue-400'
                   onClick={() => handleVerMas(producto)}
                 >
                   Ver más

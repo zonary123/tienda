@@ -1,0 +1,14 @@
+[
+  {
+    "producto_id": 1,
+    "comentario_id": 1,
+    "usuario_id": 1,
+    "comentario": "Estoy encantado con mi nuevo iMac de 27 pulgadas. La pantalla Retina es impresionante y el rendimiento del procesador es excelente. No podría estar más satisfecho con mi compra. ¡Lo recomiendo altamente a cualquier persona que busque una computadora de escritorio potente y de alta calidad!"
+  },
+  {
+    "producto_id": 1,
+    "comentario_id": 2,
+    "usuario_id": 1,
+    "comentario": "Comentario 2"
+  }
+]
