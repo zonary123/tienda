@@ -1,9 +1,22 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../css/Footer.css'
+import Contacto from '../Contacto'
 
 function Footer () {
+  const [showContacto, setShowContacto] = useState(false)
+
+  const handleShowContacto = e => {
+    e.preventDefault()
+    setShowContacto(true)
+  }
+
+  const handleHideContacto = () => {
+    setShowContacto(false)
+  }
+
   return (
-    <footer className='fixed bottom-0 left-0 w-full bg-gray-200 dark:bg-[#22252c] py-4'>
+    <footer className='bottom-0 left-0 w-full bg-gray-200 dark:bg-[#22252c] py-4'>
       <div className='container mx-auto'>
         <div className='footer-content flex justify-center items-center'>
           <p className='text-gray-600 dark:text-gray-200 text-sm'>
@@ -24,18 +37,26 @@ function Footer () {
               </Link>
             </li>
             <li>
-              <a href='#' className='text-gray-600 dark:text-gray-200'>
+              <Link
+                to='/servicios'
+                className='text-gray-600 dark:text-gray-200'
+              >
                 Servicios
-              </a>
+              </Link>
             </li>
             <li>
-              <Link to='/contacto' className='text-gray-600 dark:text-gray-200'>
+              <a
+                href=' '
+                className='text-gray-600 dark:text-gray-200'
+                onClick={handleShowContacto}
+              >
                 Contacto
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
       </div>
+      {showContacto && <Contacto onClose={handleHideContacto} />}
     </footer>
   )
 }
