@@ -1,88 +1,111 @@
-{
-  "store": "Tech Store",
-  "categories": [
-    {
-      "category": "Computadoras",
-      "products": [
-        {
-          "name": "Laptop HP 15",
-          "brand": "HP",
-          "price": 700,
-          "stock": 10,
-          "rating": 5
-        },
-        {
-          "name": "iMac 27 pulgadas",
-          "brand": "Apple",
-          "price": 2000,
-          "stock": 5,
-          "rating": 4.8
-        },
-        {
-          "name": "Chromebook Lenovo",
-          "brand": "Lenovo",
-          "price": 400,
-          "stock": 15,
-          "rating": 1.5
-        }
-      ]
-    },
-    {
-      "category": "Impresoras",
-      "products": [
-        {
-          "name": "Impresora Canon Pixma",
-          "brand": "Canon",
-          "price": 100,
-          "stock": 20,
-          "rating": 4.2
-        },
-        {
-          "name": "Impresora HP Deskjet",
-          "brand": "HP",
-          "price": 80,
-          "stock": 25,
-          "rating": 4.5
-        }
-      ]
-    },
-    {
-      "category": "Accesorios de Computadora",
-      "products": [
-        {
-          "name": "Teclado y ratón inalámbrico",
-          "brand": "Logitech",
-          "price": 50,
-          "stock": 30,
-          "rating": 4.6
-        },
-        {
-          "name": "Monitor Samsung 24 pulgadas",
-          "brand": "Samsung",
-          "price": 150,
-          "stock": 10,
-          "rating": 4.4
-        }
-      ]
-    },
-    {
-      "category": "Teléfonos Móviles",
-      "products": [
-        {
-          "name": "iPhone 12",
-          "brand": "Apple",
-          "price": 1000,
-          "stock": 8,
-          "rating": 4.9
-        },
-        {
-          "name": "Samsung Galaxy S21",
-          "brand": "Samsung",
-          "price": 900,
-          "stock": 10,
-          "rating": 4.7
-        }
-      ]
-    }
-  ]
-}
+[
+  {
+    "id": 1,
+    "nombre": "Laptop HP 15",
+    "marca": "HP",
+    "precio": 700,
+    "stock": 10,
+    "valoracion": 5,
+    "imagen": "https://www.officedepot.com.sv/medias/34846.jpg-515ftw?context=bWFzdGVyfHJvb3R8MTAzMDA2fGltYWdlL2pwZWd8aDBlL2g0Yi8xMDY0MDYwMTM1MDE3NC8zNDg0Ni5qcGdfNTE1ZnR3fGVlNTA5OWNjMmU2NmIyYWRmY2E4MzFlNzAzZjNiNTM5ZWRjYTUyZTZhNThiOGQ1MDkxZDJhYWIwOWI4NDVlZDk",
+    "descripcion": "Una laptop de gama media con pantalla de 15 pulgadas, procesador AMD Ryzen y 8 GB de RAM.",
+    "categoria": "Laptops"
+  },
+  {
+    "id": 2,
+    "nombre": "iMac 27 pulgadas",
+    "marca": "Apple",
+    "precio": 2000,
+    "stock": 5,
+    "valoracion": 4.8,
+    "imagen": "https://i.blogs.es/f0493d/cap_040/840_560.jpg",
+    "descripcion": "La computadora de escritorio de Apple con pantalla Retina de 27 pulgadas, procesador Intel Core i5 de 10.ª generación y 8 GB de RAM.",
+    "categoria": "Computadoras de escritorio"
+  },
+  {
+    "id": 3,
+    "nombre": "Chromebook Lenovo",
+    "marca": "Lenovo",
+    "precio": 400,
+    "stock": 15,
+    "valoracion": 1.5,
+    "imagen": null,
+    "descripcion": "Una laptop económica con sistema operativo Chrome OS, pantalla de 11 pulgadas, procesador Intel Celeron y 4 GB de RAM.",
+    "categoria": "Laptops"
+  },
+  {
+    "id": 4,
+    "nombre": "Monitor LG 27 pulgadas",
+    "marca": "LG",
+    "precio": 300,
+    "stock": 8,
+    "valoracion": 4.2,
+    "imagen": null,
+    "descripcion": "Un monitor de alta definición con pantalla de 27 pulgadas, resolución Full HD y tiempo de respuesta de 5 ms.",
+    "categoria": "Monitores"
+  },
+  {
+    "id": 5,
+    "nombre": "Teclado mecánico Redragon",
+    "marca": "Redragon",
+    "precio": 60,
+    "stock": 20,
+    "valoracion": 3.9,
+    "imagen": null,
+    "descripcion": "Un teclado mecánico con retroiluminación RGB, switches Outemu Blue y 104 teclas anti-ghosting.",
+    "categoria": "Accesorios de computadora"
+  },
+  {
+    "id": 6,
+    "nombre": "Disco duro externo Seagate 2 TB",
+    "marca": "Seagate",
+    "precio": 80,
+    "stock": 12,
+    "valoracion": 4.5,
+    "imagen": null,
+    "descripcion": "Un disco duro externo con capacidad de 2 TB, conexión USB 3.0 y velocidad de transferencia de hasta 120 MB/s.",
+    "categoria": "Almacenamiento externo"
+  },
+  {
+    "id": 7,
+    "nombre": "Altavoces Logitech Z623",
+    "marca": "Logitech",
+    "precio": 120,
+    "stock": 7,
+    "valoracion": 4,
+    "imagen": null,
+    "descripcion": "Un sistema de altavoces 2.1 con potencia de 200 vatios RMS, subwoofer y conectividad de 3,5 mm y RCA.",
+    "categoria": "Altavoces"
+  },
+  {
+    "id": 8,
+    "name": "Smartwatch Samsung Galaxy Watch",
+    "brand": "Samsung",
+    "price": 250,
+    "stock": 3,
+    "rating": 4.3,
+    "imagen": null,
+    "description": "Un reloj inteligente con pantalla de 1,3 pulgadas, resistencia al agua y al polvo, seguimiento de salud y actividad física, y conexión LTE."
+  },
+  {
+    "id": 9,
+    "nombre": "Impresora HP Deskjet 2710",
+    "marca": "HP",
+    "precio": 100,
+    "stock": 9,
+    "valoracion": 3.6,
+    "imagen": null,
+    "descripcion": "Una impresora multifuncional con conexión Wi-Fi, impresión a doble cara automática y compatibilidad con la aplicación HP Smart.",
+    "categoria": "Impresoras"
+  },
+  {
+    "id": 10,
+    "nombre": "Cámara Canon EOS Rebel T7",
+    "marca": "Canon",
+    "precio": 500,
+    "stock": 4,
+    "valoracion": 4.9,
+    "imagen": null,
+    "descripcion": "Una cámara réflex digital con sensor CMOS de 24,1 megapíxeles, enfoque automático de 9 puntos y capacidad de grabación de video Full HD.",
+    "categoria": "Cámaras"
+  }
+]

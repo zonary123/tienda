@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom'
-import './css/Footer.css'
+import '../css/Footer.css'
 
 function Footer () {
   return (
-    <footer className='fixed bottom-0 left-0 w-full bg-gray-200 py-4 dark:bg-[#22252c] '>
+    <footer className='fixed bottom-0 left-0 w-full bg-gray-200 dark:bg-[#22252c] py-4'>
       <div className='container mx-auto'>
         <div className='footer-content flex justify-center items-center'>
           <p className='text-gray-600 dark:text-gray-200 text-sm'>
@@ -16,7 +16,10 @@ function Footer () {
               </Link>
             </li>
             <li>
-              <Link to='/acerca_de' className='text-gray-600 dark:text-gray-200'>
+              <Link
+                to='/acerca_de'
+                className='text-gray-600 dark:text-gray-200'
+              >
                 Acerca de
               </Link>
             </li>

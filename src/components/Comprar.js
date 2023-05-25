@@ -1,6 +1,7 @@
 import React from 'react'
-import productos from '../../json/productos.json'
-export function renderStars (rating) {
+import productos from '../json/productos.json'
+
+function renderStars (rating) {
   const stars = Array.from({ length: Math.floor(rating) }, (_, index) =>
     <span key={index} className='text-yellow-500'>
       &#9733;
@@ -10,17 +11,17 @@ export function renderStars (rating) {
   return stars
 }
 
-function getProductos () {
+export default function Comprar (producto) {
   const displayedProductos = productos.categories.flatMap(
     category => category.products
   )
 
   return (
-    <div className='Catalogo grid content-start'>
-      <div className='flex overflow-x-auto'>
+    <div className='Catalogo grid content-normal font-semibold'>
+      <div className='flex flex-wrap justify-center'>
         {displayedProductos.map((producto, index) =>
           <div
-            className='Productos bg-slate-700 dark:bg-slate-500 rounded-lg w-48 h-72 m-2 p-2 flex flex-col justify-between'
+            className='Productos bg-[#7eb6eb] dark:bg-[#282a36] rounded-lg w-48 h-72 m-2 p-2 flex flex-col justify-between'
             key={index}
           >
             <div className='Producto_imagen w-44 h-36 flex items-center mx-auto rounded-lg overflow-hidden'>
@@ -30,26 +31,27 @@ function getProductos () {
                 className='object-cover w-full h-full'
               />
             </div>
-            <p>
+            <p className='text-gray-800 dark:text-gray-200 font-bold text-lg mb-1'>
               {producto.name}
             </p>
-            <h1 className='text-center overflow-hidden'>
+            <h1 className='text-center text-gray-600 dark:text-gray-300 text-sm mb-2'>
               {producto.brand}
             </h1>
-            <p className='overflow-hidden'>
+            <p className='text-gray-600 dark:text-gray-400 mb-2'>
               Precio: {producto.price}
             </p>
-            <p className='overflow-hidden'>
+            <p className='text-gray-600 dark:text-gray-400 mb-2'>
               Stock: {producto.stock}
             </p>
-            <p className='overflow-hidden'>
+            <p className='text-gray-600 dark:text-gray-400 mb-2'>
               Puntuación: {renderStars(producto.rating)}
             </p>
+            <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg' >
+              Comprar
+            </button>
           </div>
         )}
       </div>
     </div>
   )
 }
-
-export default getProductos

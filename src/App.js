@@ -1,25 +1,21 @@
-import Filter from './components/Filter'
-import Productos from './components/Productos/productos'
-import Footer from './components/Footer'
+import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import Home from './components/Home'
+import Home from './components/Principal/Home'
 import SignUp from './components/SignUp'
-import Error404 from './components/Error404'
+import Error404 from './components/error/Error404'
 import Contacto from './components/Contacto'
-
+import ProductPage from './components/Productos/ProductPage'
 
 function App () {
   return (
-    <>
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/SignUp' element={<SignUp />} />
-      <Route path='*' element={<Error404 />} />
+      <Route path='/signup' element={<SignUp />} />
       <Route path='/contacto' element={<Contacto />} />
+      <Route path='/producto/:id' element={<ProductPage />} />
+      <Route path='*' element={<Error404 />} />
     </Routes>
-    </>
   )
 }
-
 
 export default App
