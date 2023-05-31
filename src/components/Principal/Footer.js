@@ -1,20 +1,8 @@
-import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../css/Footer.css'
-import Contacto from '../Contacto'
+
 
 function Footer () {
-  const [showContacto, setShowContacto] = useState(false)
-
-  const handleShowContacto = e => {
-    e.preventDefault()
-    setShowContacto(true)
-  }
-
-  const handleHideContacto = () => {
-    setShowContacto(false)
-  }
-
   return (
     <footer className='bottom-0 left-0 w-full bg-gray-200 dark:bg-[#22252c] py-4'>
       <div className='container mx-auto'>
@@ -45,18 +33,21 @@ function Footer () {
               </Link>
             </li>
             <li>
-              <a
+              <Link to='/contacto' className='text-gray-600 dark:text-gray-200'>
+                Contacto
+              </Link>
+              {/* <a
                 href=' '
                 className='text-gray-600 dark:text-gray-200'
                 onClick={handleShowContacto}
               >
                 Contacto
-              </a>
+              </a> */}
             </li>
           </ul>
         </div>
       </div>
-      {showContacto && <Contacto onClose={handleHideContacto} />}
+      {/* showContacto && <Contacto onClose={handleHideContacto} /> */}
     </footer>
   )
 }
