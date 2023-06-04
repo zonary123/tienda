@@ -1,7 +1,8 @@
 import React from 'react'
 import productos from '../json/productos.json'
 
-function renderStars (rating) {
+// Función para renderizar las estrellas de la puntuación
+function renderStars(rating) {
   const stars = Array.from({ length: Math.floor(rating) }, (_, index) =>
     <span key={index} className='text-yellow-500'>
       &#9733;
@@ -11,7 +12,8 @@ function renderStars (rating) {
   return stars
 }
 
-export default function Comprar (producto) {
+export default function Comprar(producto) {
+  // Obtiene todos los productos del archivo JSON
   const displayedProductos = productos.categories.flatMap(
     category => category.products
   )
@@ -43,7 +45,7 @@ export default function Comprar (producto) {
             <p className='text-gray-600 dark:text-gray-400 mb-2'>
               Stock: {producto.stock}
             </p>
-            <p className='text-gray-600 dark:text-gray-400 mb-2'>
+            <p className='text-gray-600 dark:text-gray-400 mb-2 background'>
               Puntuación: {renderStars(producto.rating)}
             </p>
             <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg' >

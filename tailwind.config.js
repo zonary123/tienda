@@ -1,12 +1,17 @@
-/** @type {import('tailwindcss').Config} */
+// tailwind.config.js
 module.exports = {
-  darkMode: 'class',
-  content: [
-    './src/**/*.{js,jsx,ts,tsx}',
-    './src/components/**/*.{js,jsx,ts,tsx}'
-  ],
+  purge: ['./src/**/*.{js,jsx,ts,tsx}', './public/index.html'],
+  darkMode: false,
   theme: {
-    extend: {}
+    extend: {
+      colors: {
+        'primary-background-dark': '#22252c',
+        'primary-background-light': '#f5f5f5',
+        'primary-text-dark': '#f5f5f5',
+        'primary-text-light': '#22252c'
+      }
+    }
   },
+  variants: {},
   plugins: []
 }

@@ -2,30 +2,33 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 function Contacto () {
-  const [nombre, setNombre] = useState('')
-  const [email, setEmail] = useState('')
-  const [mensaje, setMensaje] = useState('')
-  const [enviado, setEnviado] = useState(false)
+  // Estados para los campos del formulario y el estado de envío
+  const [nombre, setNombre] = useState('') // Estado para el campo de nombre
+  const [email, setEmail] = useState('') // Estado para el campo de email
+  const [mensaje, setMensaje] = useState('') // Estado para el campo de mensaje
+  const [enviado, setEnviado] = useState(false) // Estado que indica si el formulario ha sido enviado
 
   const handleSubmit = e => {
     e.preventDefault()
     // Aquí iría el código para enviar el mensaje por email o por alguna API
-    setEnviado(true)
+
+    setEnviado(true) // Actualiza el estado de envío a true
   }
 
   const handleChangeNombre = e => {
-    setNombre(e.target.value)
+    setNombre(e.target.value) // Actualiza el estado del campo de nombre con el valor ingresado
   }
 
   const handleChangeEmail = e => {
-    setEmail(e.target.value)
+    setEmail(e.target.value) // Actualiza el estado del campo de email con el valor ingresado
   }
 
   const handleChangeMensaje = e => {
-    setMensaje(e.target.value)
+    setMensaje(e.target.value) // Actualiza el estado del campo de mensaje con el valor ingresado
   }
 
   if (enviado) {
+    // Si el formulario ha sido enviado, muestra un mensaje de agradecimiento
     return (
       <div
         className={`flex justify-center items-center h-screen dark:bg-gray-900 dark:text-white bg-gray-100`}
@@ -47,6 +50,7 @@ function Contacto () {
     )
   }
 
+  // Renderiza el formulario de contacto
   return (
     <div
       className={`flex justify-center items-center h-screen dark:bg-gray-900 dark:text-white bg-gray-100`}

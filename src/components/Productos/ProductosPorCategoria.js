@@ -2,12 +2,10 @@ import React from 'react'
 import productos from '../json/productos.json'
 import { renderStars } from './productos'
 
-// Resto del código...
-
 function getProductosByCategory (category) {
-  const displayedProductos = productos.categories.find(
-    cat => cat.category === category
-  ).products
+  const displayedProductos = productos.filter(
+    producto => producto.categoria === category
+  )
 
   return displayedProductos
 }
@@ -18,10 +16,10 @@ function ProductosPorCategoria ({ category }) {
   return (
     <div className='Catalogo grid content-start'>
       <div className='flex overflow-x-auto'>
-        {productos.map((producto, index) =>
+        {productos.map(producto =>
           <div
             className='Productos bg-slate-700 dark:bg-slate-500 rounded-lg w-48 h-72 m-2 p-2 flex flex-col justify-between'
-            key={index}
+            key={producto.id}
           >
             <div className='Producto_imagen w-44 h-36 flex items-center mx-auto rounded-lg overflow-hidden'>
               <img
@@ -31,19 +29,19 @@ function ProductosPorCategoria ({ category }) {
               />
             </div>
             <p>
-              {producto.name}
+              {producto.nombre}
             </p>
             <h1 className='text-center overflow-hidden'>
-              {producto.brand}
+              {producto.marca}
             </h1>
             <p className='overflow-hidden'>
-              Precio: {producto.price}
+              Precio: {producto.precio}
             </p>
             <p className='overflow-hidden'>
               Stock: {producto.stock}
             </p>
             <p>
-              Puntuación: {renderStars(producto.rating)}
+              Puntuación: {renderStars(producto.valoracion)}
             </p>
           </div>
         )}

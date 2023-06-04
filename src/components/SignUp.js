@@ -1,15 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 const SignUp = () => {
+  // Estado del formulario para almacenar los datos ingresados por el usuario
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     password: ''
-  })
+  });
 
+  // Función para manejar los cambios en los campos de entrada
   const handleChange = e => {
-    setFormData({ ...formData, [e.target.id]: e.target.value })
-  }
+    // Actualiza el estado del formulario con los nuevos valores ingresados
+    setFormData({ ...formData, [e.target.id]: e.target.value });
+  };
 
   return (
     <div className='bg-gray-900 min-h-screen flex items-center justify-center'>
@@ -23,6 +26,7 @@ const SignUp = () => {
             >
               Username
             </label>
+            {/* Campo de entrada para el nombre de usuario */}
             <input
               type='text'
               id='username'
@@ -39,6 +43,7 @@ const SignUp = () => {
             >
               Email
             </label>
+            {/* Campo de entrada para el correo electrónico */}
             <input
               type='email'
               id='email'
@@ -55,6 +60,7 @@ const SignUp = () => {
             >
               Password
             </label>
+            {/* Campo de entrada para la contraseña */}
             <input
               type='password'
               id='password'
@@ -64,6 +70,7 @@ const SignUp = () => {
               onChange={handleChange}
             />
           </div>
+          {/* Botón de envío del formulario */}
           <button
             type='submit'
             className='w-full flex justify-center py-4 px-6 border border-transparent rounded-lg shadow-sm text-lg font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500'
@@ -73,7 +80,7 @@ const SignUp = () => {
         </form>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default SignUp
+export default SignUp;

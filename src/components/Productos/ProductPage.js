@@ -7,7 +7,8 @@ import comentarios from '../../json/comentarios.json'
 import users from '../../json/users.json'
 import { FiArrowLeft } from 'react-icons/fi'
 
-function renderStars (rating) {
+// Función para renderizar las estrellas de la puntuación
+function renderStars(rating) {
   const stars = Array.from({ length: Math.floor(rating) }, (_, index) =>
     <span key={index} className='text-yellow-500'>
       &#9733;
@@ -21,14 +22,17 @@ const ProductPage = () => {
   const { id } = useParams()
   const producto = productos.find(p => p.id === parseInt(id))
 
+  // Si no se encuentra el producto, mostrar la página de error 404
   if (!producto) {
     return <Error404 />
   }
 
+  // Filtrar los comentarios por producto ID
   const comentariosProducto = comentarios.filter(
     c => c.producto_id === parseInt(id)
   )
 
+  // Mapear los comentarios con el usuario correspondiente
   const comentariosConUsuario = comentariosProducto.map(c => {
     const usuario = users.find(u => u.user_id === c.usuario_id)
     return {
@@ -91,23 +95,26 @@ const ProductPage = () => {
         </h2>
         <div className='flex items-center justify-center'>
           <div className='bg-gray-100 dark:bg-gray-800 rounded-lg p-8 mx-auto max-w-md w-full md:w-3/4 lg:w-1/2'>
-            {comentariosConUsuario.length === 0
-              ? <div className='text-gray-700 dark:text-gray-300'>
-                  No hay comentarios sobre este producto.
-                </div>
-              : comentariosConUsuario.map(comentario =>
+            {comentariosConUsuario.length === 0 ? (
+              <div className='text-gray-700 dark:text-gray-300'>
+                No hay comentarios sobre este producto.
+              </div>
+            ) : (
+              comentariosConUsuario.map(comentario => (
                 <div
                   className='bg-gray-100 dark:bg-gray-800 rounded-lg p-4 mb-4'
                   key={comentario.comentario_id}
-                  >
+                >
                   <div className='flex items-center mb-4'>
-                    {comentario.img_perfil
-                        ? <img
-                          src={comentario.img_perfil}
-                          alt={comentario.usuario}
-                          className='w-12 h-12 rounded-full mr-4'
-                          />
-                        : <div className='w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-full mr-4' />}
+                    {comentario.img_perfil ? (
+                      <img
+                        src={comentario.img_perfil}
+                        alt={comentario.usuario}
+                        className='w-12 h-12 rounded-full mr-4'
+                      />
+                    ) : (
+                      <div className='w-12 h-12 bg-gray-200 dark:bg-gray-700 rounded-full mr-4' />
+                    )}
                     <p className='text-gray-900 dark:text-gray-100 font-bold text-lg'>
                       {comentario.usuario}
                     </p>
@@ -116,7 +123,8 @@ const ProductPage = () => {
                     {comentario.comentario}
                   </p>
                 </div>
-                )}
+              ))
+            )}
           </div>
         </div>
       </div>

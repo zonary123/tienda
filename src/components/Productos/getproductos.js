@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import productos from '../../json/productos.json'
 
+// Función para renderizar las estrellas de la valoración
 export function renderStars (rating) {
   const stars = Array.from({ length: Math.floor(rating) }, (_, index) =>
     <span key={index} className='text-yellow-500'>
@@ -16,6 +17,7 @@ export default function GetProductos () {
   const displayedProductos = productos
   const navigate = useNavigate()
 
+  // Función para manejar el evento de hacer clic en "Ver más"
   const handleVerMas = producto => {
     navigate(`/Producto/${producto.id}`)
   }
@@ -45,7 +47,6 @@ export default function GetProductos () {
             <p className='text-gray-800 dark:text-gray-200 font-bold text-lg my-1'>
               {producto.nombre}
             </p>
-
             <p className='text-gray-700 dark:text-gray-400 my-1'>
               Precio: {producto.precio}€
             </p>
