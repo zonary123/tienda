@@ -2,9 +2,18 @@
 
 Este proyecto fue creado con [Create React App](https://github.com/facebook/create-react-app).
 
+## Para poder ejecutar la pagina
+
+<https://nodejs.org/en/download>
+
+```ini
+  npm install
+  npm start
+```
+
 ## Scripts Disponibles
 
-En el directorio del proyecto, puedes ejecutar los siguientes scripts:
+En el directorio del proyecto, puedes ejecutar los siguiecripts:
 
 ### `npm start`
 
